@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="modal.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="modal.css" />
+  <script>
+    let openModal = moduleName().openModal;
+    var configA = {
+      title: '提醒',
+      content: '确认退出吗',
+      width: 500,
+      okText: 'ok',
+      cancelText: 'cancel'
+    }
+  </script>
+  <title>NativeJS</title>
+</head>
+<body>
+  <button onclick="openModal(configA)" id="buttonA">弹窗A</button>
+  <button onclick="openModal({title:'异常提醒', content: '请联系管理员'})" id="buttonB">弹窗B</button>
+</body>
+</html>

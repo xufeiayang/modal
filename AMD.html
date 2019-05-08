@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>AMD</title>
+  <link rel="stylesheet" type="text/css" href="modal.css" />
+  <script type="text/javascript" src="require.js"></script>
+  <script language="javascript">
+    var configA = {
+      title: '提醒',
+      content: '确认退出吗',
+      width: 500,
+      okText: 'ok',
+      cancelText: 'cancel'
+    }
+    var openModal;
+    require(["modal"], (Modal) =>{
+      console.log(Modal)
+      let modal = Modal();
+      openModal = function (config) {
+        modal.openModal(config);
+      }
+    })
+  </script>
+</head>
+<body>
+  <button onclick="openModal(configA)" id="buttonA">弹窗A</button>
+  <button onclick="openModal({title:'异常提醒', content: '请联系管理员'})" id="buttonB">弹窗B</button>
+</body>
+</html>
